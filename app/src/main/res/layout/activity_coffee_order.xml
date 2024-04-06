@@ -1,0 +1,256 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:tools="http://schemas.android.com/tools"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                tools:context=".CoffeeOrderController">
+
+    <RelativeLayout
+            android:id="@+id/headerLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="8dp">
+
+        <ImageView
+                android:id="@+id/coffeeImage"
+                android:layout_width="125dp"
+                android:layout_height="130dp"
+                android:src="@drawable/coffee_order"
+                android:scaleType="fitXY"
+                android:layout_alignParentStart="true"
+                android:layout_centerVertical="true"/>
+
+        <TextView
+                android:id="@+id/orderTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toEndOf="@id/coffeeImage"
+                android:layout_marginStart="16dp"
+                android:text="@string/ordering_coffee"
+                android:textColor="#b13a3a"
+                android:textSize="18sp"
+                android:fontFamily="sans-serif-black"
+                android:layout_centerVertical="true" />
+
+    </RelativeLayout>
+
+
+    <TextView
+            android:id="@+id/cupSizesLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/cup_sizes"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:textColor="#000000"
+            android:layout_below="@id/headerLayout"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="7dp"/>
+    <RadioGroup
+            android:id="@+id/cupSizes"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_below="@id/cupSizesLabel"
+            android:layout_marginTop="-36dp"
+            android:padding="8dp" android:layout_toEndOf="@+id/cupSizesLabel"
+            android:layout_marginStart="14dp">
+
+        <RadioButton
+                android:id="@+id/shortSize"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/short_size"/>
+
+        <RadioButton
+                android:id="@+id/tallSize"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/tall"/>
+
+        <RadioButton
+                android:id="@+id/grandeSize"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/grande"/>
+
+        <RadioButton
+                android:id="@+id/ventiSize"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/venti"/>
+
+    </RadioGroup>
+    <TextView
+            android:id="@+id/addInsLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/add_ins"
+            android:textStyle="bold"
+            android:textSize="20sp"
+            android:textColor="#000000"
+            android:layout_below="@id/cupSizes"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="16dp" />
+
+    <RelativeLayout
+            android:id="@+id/addInsLayout"
+            android:layout_width="match_parent"
+            android:layout_height="146dp"
+            android:layout_below="@id/addInsLabel"
+            android:padding="8dp"
+            android:layout_alignParentStart="true"
+            android:layout_marginStart="0dp">
+
+        <CheckBox
+                android:id="@+id/sweetCream"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/sweet_cream"
+                android:layout_alignParentStart="true"
+                android:layout_marginStart="23dp"/>
+
+        <CheckBox
+                android:id="@+id/frenchVanilla"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/french_vanilla"
+                android:layout_toEndOf="@id/sweetCream"
+                android:layout_marginStart="36dp"/>
+        <CheckBox
+                android:id="@+id/irishCream"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/irish_cream"
+                android:layout_below="@id/sweetCream"
+                android:layout_alignStart="@id/sweetCream"
+                android:layout_marginTop="11dp"
+                android:layout_marginStart="3dp"/>
+        <CheckBox
+                android:id="@+id/caramel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/caramel"
+                android:layout_below="@id/frenchVanilla"
+                android:layout_alignStart="@id/frenchVanilla"
+                android:layout_marginTop="14dp"
+                android:layout_marginStart="78dp"/>
+        <CheckBox
+                android:id="@+id/mocha"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/mocha"
+                android:layout_below="@id/irishCream"
+                android:layout_alignStart="@id/irishCream"
+                android:layout_marginTop="-46dp"
+                android:layout_marginStart="134dp"/>
+
+    </RelativeLayout>
+
+    <RelativeLayout
+            android:id="@+id/quantityLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/addInsLayout"
+            android:padding="8dp">
+
+        <TextView
+                android:id="@+id/quantityPrompt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/quantity"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                android:textColor="#000000"
+                android:layout_alignParentStart="true"
+                android:layout_centerVertical="true" />
+
+        <Spinner
+                android:id="@+id/coffeeQuantity"
+                android:layout_width="110dp"
+                android:layout_height="wrap_content"
+                android:layout_toEndOf="@id/quantityPrompt"
+                android:layout_marginStart="8dp"
+                android:layout_centerVertical="true" />
+
+        <Button
+                android:id="@+id/addCoffee"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/add"
+                android:layout_toEndOf="@id/coffeeQuantity"
+                android:layout_marginStart="13dp"
+        />
+        <Button
+                android:id="@+id/removeCoffee"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/remove"
+                android:layout_toEndOf="@id/addCoffee"
+                android:layout_marginStart="7dp"
+        />
+
+    </RelativeLayout>
+
+    <TextView
+            android:id="@+id/selectedCoffeesLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/selected_coffees"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:textColor="#000000"
+            android:layout_below="@id/quantityLayout"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="16dp" />
+
+    <ListView
+            android:id="@+id/coffeeCart"
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:layout_below="@id/selectedCoffeesLabel"
+            android:layout_marginTop="16dp"
+            android:padding="8dp"
+            android:choiceMode="singleChoice"/>
+
+    <RelativeLayout
+            android:id="@+id/subtotalLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/coffeeCart"
+            android:padding="8dp">
+
+        <TextView
+                android:id="@+id/subtotalLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/subtotal"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:textColor="#000000"
+                android:layout_alignParentStart="true"
+                android:layout_centerVertical="true" />
+
+        <TextView
+                android:id="@+id/subtotalText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="20sp"
+                android:textColor="#000000"
+                android:layout_toEndOf="@id/subtotalLabel"
+                android:layout_marginStart="8dp"
+                android:layout_centerVertical="true" />
+
+        <Button
+                android:id="@+id/coffeeAddToCartButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/add_to_current_cart"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:layout_alignParentEnd="true"
+                android:layout_marginEnd="-4dp"/>
+
+    </RelativeLayout>
+
+</RelativeLayout>

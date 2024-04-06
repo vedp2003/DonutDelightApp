@@ -153,19 +153,18 @@ public class DonutOrderController extends AppCompatActivity {
 
     private int[] initializeDonutImages() {
         return new int[] {
-                R.drawable.yeast_donut,
-                R.drawable.yeast_donut,
-                R.drawable.yeast_donut,
-                R.drawable.yeast_donut,
-                R.drawable.yeast_donut,
-                R.drawable.yeast_donut,
-                R.drawable.cake_donut,
-                R.drawable.cake_donut,
-                R.drawable.cake_donut,
-                R.drawable.cake_donut,
-                R.drawable.donut_holes,
-                R.drawable.donut_holes,
-                R.drawable.donut_holes
+                R.drawable.yeast_donut_a,
+                R.drawable.yeast_donut_b,
+                R.drawable.yeast_donut_c,
+                R.drawable.yeast_donut_d,
+                R.drawable.yeast_donut_e,
+                R.drawable.yeast_donut_f,
+                R.drawable.cake_donut_a,
+                R.drawable.cake_donut_b,
+                R.drawable.cake_donut_c,
+                R.drawable.donut_holes_a,
+                R.drawable.donut_holes_b,
+                R.drawable.donut_holes_c
         };
     }
 

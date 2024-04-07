@@ -26,16 +26,7 @@ public class AllOrdersController extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_all_orders);
-        initializeUIComponents();
-    }
 
-    @Override
-    protected void onResume() {
-        super.onResume();
-        setupOrderNumberSpinner();
-    }
-
-    private void initializeUIComponents() {
         orderNumberSpinner = findViewById(R.id.orderNumber);
         allOrdersListView = findViewById(R.id.allOrders);
         orderTotalTextView = findViewById(R.id.totalAmount);
@@ -43,11 +34,16 @@ public class AllOrdersController extends AppCompatActivity {
 
         orderManager = OrderManager.getInstance();
 
-        Log.d("OrderDebugInstance3", "OrderManager instance hash: " + System.identityHashCode(orderManager));
-
         setupOrderNumberSpinner();
 
         cancelOrderButton.setOnClickListener(v -> cancelSelectedOrder());
+
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        setupOrderNumberSpinner();
     }
 
     private void setupOrderNumberSpinner() {

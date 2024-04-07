@@ -32,7 +32,7 @@
     <string name="irish_cream">Irish Cream</string>
     <string name="caramel">Caramel</string>
     <string name="mocha">Mocha</string>
-    <string name="add_to_cart">Add Order to Cart</string>
+    <string name="add_to_cart">Add Order to Current Cart</string>
     <string name="subtotal_0_00">Subtotal: $0.00</string>
     <string name="remove_selected">Remove Selected</string>
     <string name="selected_donuts">Selected Donuts:</string>

@@ -52,13 +52,12 @@ public class CurrentOrderCartController extends AppCompatActivity {
             if(selectedView != null) {
                 selectedView.setBackgroundColor(getResources().getColor(android.R.color.transparent));
             }
-            view.setBackgroundColor(getResources().getColor(R.color.selected_item));
+            view.setBackgroundColor(getResources().getColor(R.color.highlight));
             selectedCoffeeIndex = position;
             selectedView = view;
         });
 
         removeItemButton.setOnClickListener(v -> removeSelectedItem());
-
         placeOrderButton.setOnClickListener(v -> placeOrder());
     }
 
@@ -76,7 +75,6 @@ public class CurrentOrderCartController extends AppCompatActivity {
             updateOrderDetails();
             Toast.makeText(this, "Item removed successfully", Toast.LENGTH_SHORT).show();
 
-            // Reset selection
             if (selectedView != null) {
                 selectedView.setBackgroundColor(getResources().getColor(android.R.color.transparent));
             }
@@ -110,7 +108,6 @@ public class CurrentOrderCartController extends AppCompatActivity {
             builder.setNegativeButton("No", new DialogInterface.OnClickListener() {
                 @Override
                 public void onClick(DialogInterface dialog, int which) {
-                    // Do nothing, just dismiss the dialog
                 }
             });
             AlertDialog alertDialog = builder.create();

@@ -58,7 +58,7 @@ public class DonutOrderController extends AppCompatActivity {
                 if(selectedView != null) {
                     selectedView.setBackgroundColor(getResources().getColor(android.R.color.transparent));
                 }
-                view.setBackgroundColor(getResources().getColor(R.color.selected_item));
+                view.setBackgroundColor(getResources().getColor(R.color.highlight));
                 selectedDonutIndex = position;
                 selectedView = view;
             }

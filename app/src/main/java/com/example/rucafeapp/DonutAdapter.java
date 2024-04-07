@@ -35,8 +35,8 @@ public class DonutAdapter extends RecyclerView.Adapter<DonutAdapter.ViewHolder> 
         Donut donut = (Donut) donutList.get(position);
         donut.setQuantity(1);
         holder.donutImageView.setImageResource(imageResourceIds[position]);
-        holder.donutNameTextView.setText(String.format("%s %s", donut.getType(), donut.getFlavor()));
-        holder.donutPriceTextView.setText(String.format("$%.2f", donut.price()));
+        holder.donutNameTextView.setText(donut.getFlavor() + " " + donut.getType());
+        holder.donutPriceTextView.setText(String.format("Price: $%.2f", donut.price()));
 
         ArrayAdapter<Integer> quantityAdapter = new ArrayAdapter<>(context, android.R.layout.simple_spinner_item, getQuantities());
         quantityAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
@@ -48,7 +48,7 @@ public class DonutAdapter extends RecyclerView.Adapter<DonutAdapter.ViewHolder> 
                 int quantity = (int) parent.getItemAtPosition(spinnerPosition);
                 donut.setQuantity(quantity);
                 double price = donut.price();
-                holder.donutPriceTextView.setText(String.format("$%.2f", price));
+                holder.donutPriceTextView.setText(String.format("Price: $%.2f", price));
             }
 
             @Override

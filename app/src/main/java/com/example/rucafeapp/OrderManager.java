@@ -1,7 +1,5 @@
 package com.example.rucafeapp;
 
-import android.util.Log;
-
 import java.util.ArrayList;
 
 /**
@@ -37,15 +35,6 @@ public class OrderManager {
             orderManagerInstance = new OrderManager();
         }
         return orderManagerInstance;
-    }
-
-    /**
-     * A getter methods returns the list of all orders.
-     *
-     * @return an observable list of Order objects.
-     */
-    public ArrayList<Order> getAllOrders() {
-        return allOrders;
     }
 
     /**

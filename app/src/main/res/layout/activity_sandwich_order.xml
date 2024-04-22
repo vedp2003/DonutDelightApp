@@ -30,7 +30,7 @@
                 android:textColor="#b13a3a"
                 android:textSize="18sp"
                 android:fontFamily="sans-serif-black"
-                android:layout_centerVertical="true" />
+                android:layout_centerVertical="true"/>
 
     </RelativeLayout>
 
@@ -129,7 +129,7 @@
             android:textColor="#000000"
             android:layout_below="@id/proteins"
             android:layout_marginStart="8dp"
-            android:layout_marginTop="16dp" />
+            android:layout_marginTop="16dp"/>
 
     <RelativeLayout
             android:id="@+id/addOnsLayout"
@@ -191,7 +191,7 @@
                 android:textStyle="bold"
                 android:textColor="#000000"
                 android:layout_alignParentStart="true"
-                android:layout_centerVertical="true" />
+                android:layout_centerVertical="true"/>
 
         <Spinner
                 android:id="@+id/sandwichQuantity"
@@ -199,7 +199,7 @@
                 android:layout_height="wrap_content"
                 android:layout_toEndOf="@id/quantityPrompt"
                 android:layout_marginStart="8dp"
-                android:layout_centerVertical="true" />
+                android:layout_centerVertical="true"/>
 
         <Button
                 android:id="@+id/addSandwich"
@@ -228,7 +228,7 @@
             android:textColor="#000000"
             android:layout_below="@id/quantityLayout"
             android:layout_marginStart="8dp"
-            android:layout_marginTop="16dp" />
+            android:layout_marginTop="16dp"/>
 
     <ListView
             android:id="@+id/sandwichCart"
@@ -255,7 +255,7 @@
                 android:textStyle="bold"
                 android:textColor="#000000"
                 android:layout_alignParentStart="true"
-                android:layout_centerVertical="true" />
+                android:layout_centerVertical="true"/>
 
         <TextView
                 android:id="@+id/subtotalText"
@@ -265,7 +265,7 @@
                 android:textColor="#000000"
                 android:layout_toEndOf="@id/subtotalLabel"
                 android:layout_marginStart="8dp"
-                android:layout_centerVertical="true" />
+                android:layout_centerVertical="true"/>
 
         <Button
                 android:id="@+id/sandwichAddToCartButton"

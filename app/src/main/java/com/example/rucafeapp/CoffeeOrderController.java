@@ -61,18 +61,21 @@ public class CoffeeOrderController extends AppCompatActivity {
         for (int i = 1; i <= 10; i++) {
             quantities.add(String.valueOf(i));
         }
-        ArrayAdapter<String> quantityAdapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_item, quantities);
+        ArrayAdapter<String> quantityAdapter = new ArrayAdapter<>(this,
+                android.R.layout.simple_spinner_item, quantities);
+
         quantityAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         coffeeQuantitySpinner.setAdapter(quantityAdapter);
-
         coffeeOrders = new ArrayList<>();
         coffeeCartAdapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, coffeeOrders);
         coffeeCartListView.setAdapter(coffeeCartAdapter);
-
         addCoffeeButton.setOnClickListener(v -> addCoffee());
         removeCoffeeButton.setOnClickListener(v -> removeCoffee());
         addToCartButton.setOnClickListener(v -> addToCart());
+        listViewItemListener();
+    }
 
+    private void listViewItemListener() {
         coffeeCartListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
@@ -84,7 +87,6 @@ public class CoffeeOrderController extends AppCompatActivity {
                 selectedView = view;
             }
         });
-
     }
 
     private void addToCart() {
@@ -99,7 +101,6 @@ public class CoffeeOrderController extends AppCompatActivity {
                     coffeeCartAdapter.notifyDataSetChanged();
                     coffeeSubtotal.setText(String.format("%.2f", 0.0));
                     coffeeQuantitySpinner.setSelection(0);
-
                     coffeeCupSizeToggleGroup.clearCheck();
                     sweetCream.setChecked(false);
                     frenchVanilla.setChecked(false);
@@ -107,7 +108,8 @@ public class CoffeeOrderController extends AppCompatActivity {
                     caramel.setChecked(false);
                     mocha.setChecked(false);
 
-                    Toast.makeText(CoffeeOrderController.this, "Your Coffee Order Has Been Added to the Cart.", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(CoffeeOrderController.this,
+                            "Your Coffee Order Has Been Added to the Cart.", Toast.LENGTH_SHORT).show();
 
                     startActivity(new Intent(getApplicationContext(), MainActivity.class));
                     finish();
@@ -121,7 +123,8 @@ public class CoffeeOrderController extends AppCompatActivity {
             AlertDialog alertDialog = builder.create();
             alertDialog.show();
         } else {
-            Toast.makeText(CoffeeOrderController.this, "ERROR: You must add coffee before placing the order.", Toast.LENGTH_SHORT).show();
+            Toast.makeText(CoffeeOrderController.this,
+                    "ERROR: You must add coffee before placing the order.", Toast.LENGTH_SHORT).show();
         }
     }
 
@@ -146,14 +149,16 @@ public class CoffeeOrderController extends AppCompatActivity {
 
 
         } else {
-            Toast.makeText(CoffeeOrderController.this, "ERROR: Please select a coffee to remove.", Toast.LENGTH_SHORT).show();
+            Toast.makeText(CoffeeOrderController.this,
+                    "ERROR: Please select a coffee to remove.", Toast.LENGTH_SHORT).show();
         }
     }
 
     private void addCoffee() {
         int selectedId = coffeeCupSizeToggleGroup.getCheckedRadioButtonId();
         if (selectedId == -1) {
-            Toast.makeText(CoffeeOrderController.this, "ERROR: Please select a coffee cup size before adding coffee to selected items.", Toast.LENGTH_SHORT).show();
+            Toast.makeText(CoffeeOrderController.this,
+                    "ERROR: Please select a coffee cup size before adding coffee to selected items.", Toast.LENGTH_SHORT).show();
             return;
         }
         RadioButton selectedSize = findViewById(selectedId);

@@ -30,7 +30,7 @@
                 android:textColor="#b13a3a"
                 android:textSize="18sp"
                 android:fontFamily="sans-serif-black"
-                android:layout_centerVertical="true" />
+                android:layout_centerVertical="true"/>
 
     </RelativeLayout>
 
@@ -91,7 +91,7 @@
             android:textColor="#000000"
             android:layout_below="@id/cupSizes"
             android:layout_marginStart="8dp"
-            android:layout_marginTop="16dp" />
+            android:layout_marginTop="16dp"/>
 
     <RelativeLayout
             android:id="@+id/addInsLayout"
@@ -163,7 +163,7 @@
                 android:textStyle="bold"
                 android:textColor="#000000"
                 android:layout_alignParentStart="true"
-                android:layout_centerVertical="true" />
+                android:layout_centerVertical="true"/>
 
         <Spinner
                 android:id="@+id/coffeeQuantity"
@@ -171,7 +171,7 @@
                 android:layout_height="wrap_content"
                 android:layout_toEndOf="@id/quantityPrompt"
                 android:layout_marginStart="8dp"
-                android:layout_centerVertical="true" />
+                android:layout_centerVertical="true"/>
 
         <Button
                 android:id="@+id/addCoffee"
@@ -202,7 +202,7 @@
             android:textColor="#000000"
             android:layout_below="@id/quantityLayout"
             android:layout_marginStart="8dp"
-            android:layout_marginTop="16dp" />
+            android:layout_marginTop="16dp"/>
 
     <ListView
             android:id="@+id/coffeeCart"
@@ -229,7 +229,7 @@
                 android:textStyle="bold"
                 android:textColor="#000000"
                 android:layout_alignParentStart="true"
-                android:layout_centerVertical="true" />
+                android:layout_centerVertical="true"/>
 
         <TextView
                 android:id="@+id/subtotalText"
@@ -239,7 +239,7 @@
                 android:textColor="#000000"
                 android:layout_toEndOf="@id/subtotalLabel"
                 android:layout_marginStart="8dp"
-                android:layout_centerVertical="true" />
+                android:layout_centerVertical="true"/>
 
         <Button
                 android:id="@+id/coffeeAddToCartButton"

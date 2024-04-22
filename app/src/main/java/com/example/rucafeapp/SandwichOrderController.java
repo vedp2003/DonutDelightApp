@@ -61,6 +61,11 @@ public class SandwichOrderController extends AppCompatActivity {
         addSandwichButton.setOnClickListener(v -> addSandwich());
         removeSandwichButton.setOnClickListener(v -> removeSandwich());
         addToCartButton.setOnClickListener(v -> addToCart());
+
+        listViewItemListener();
+    }
+
+    private void listViewItemListener() {
         sandwichCartListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
@@ -94,7 +99,8 @@ public class SandwichOrderController extends AppCompatActivity {
                     onions.setChecked(false);
                     cheese.setChecked(false);
 
-                    Toast.makeText(SandwichOrderController.this, "Your Sandwich Order Has Been Added to the Cart.", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(SandwichOrderController.this,
+                            "Your Sandwich Order Has Been Added to the Cart.", Toast.LENGTH_SHORT).show();
 
                     startActivity(new Intent(getApplicationContext(), MainActivity.class));
                     finish();
@@ -103,13 +109,13 @@ public class SandwichOrderController extends AppCompatActivity {
             builder.setNegativeButton("No", new DialogInterface.OnClickListener() {
                 @Override
                 public void onClick(DialogInterface dialog, int which) {
-
                 }
             });
             AlertDialog alertDialog = builder.create();
             alertDialog.show();
         } else {
-            Toast.makeText(SandwichOrderController.this, "ERROR: You must add a sandwich before placing the order.", Toast.LENGTH_SHORT).show();
+            Toast.makeText(SandwichOrderController.this,
+                    "ERROR: You must add a sandwich before placing the order.", Toast.LENGTH_SHORT).show();
         }
     }
 
@@ -134,7 +140,8 @@ public class SandwichOrderController extends AppCompatActivity {
 
 
         } else {
-            Toast.makeText(SandwichOrderController.this, "ERROR: Please select a sandwich to remove.", Toast.LENGTH_SHORT).show();
+            Toast.makeText(SandwichOrderController.this,
+                    "ERROR: Please select a sandwich to remove.", Toast.LENGTH_SHORT).show();
         }
     }
 
@@ -142,34 +149,30 @@ public class SandwichOrderController extends AppCompatActivity {
         int selectedId = breadsGroup.getCheckedRadioButtonId();
         int selectedId1 = proteinsGroup.getCheckedRadioButtonId();
         if (selectedId == -1) {
-            Toast.makeText(SandwichOrderController.this, "ERROR: Please select a bread before adding sandwich to selected items.", Toast.LENGTH_SHORT).show();
+            Toast.makeText(SandwichOrderController.this,
+                    "ERROR: Please select a bread before adding sandwich to selected items.", Toast.LENGTH_SHORT).show();
             return;
         }
         if (selectedId1 == -1) {
-            Toast.makeText(SandwichOrderController.this, "ERROR: Please select a protein before adding sandwich to selected items.", Toast.LENGTH_SHORT).show();
+            Toast.makeText(SandwichOrderController.this,
+                    "ERROR: Please select a protein before adding sandwich to selected items.", Toast.LENGTH_SHORT).show();
             return;
         }
         RadioButton selectedBread = findViewById(selectedId);
         String bread = selectedBread.getText().toString();
         RadioButton selectedProtein = findViewById(selectedId1);
         String protein = selectedProtein.getText().toString();
-
         ArrayList<String> addOns = new ArrayList<>();
         if (lettuce.isChecked()) addOns.add(Sandwich.LETTUCE_ADDON);
         if (tomatoes.isChecked()) addOns.add(Sandwich.TOMATOES_ADDON);
         if (onions.isChecked()) addOns.add(Sandwich.ONIONS_ADDON);
         if (cheese.isChecked()) addOns.add(Sandwich.CHEESE_ADDON);
-
         int quantity = Integer.parseInt(sandwichQuantitySpinner.getSelectedItem().toString());
-
         Sandwich newSandwichOrder = new Sandwich(bread, protein, addOns);
         newSandwichOrder.setQuantity(quantity);
-
         sandwichOrders.add(newSandwichOrder);
-
         subtotalAmount += newSandwichOrder.price();
         sandwichSubtotal.setText(String.format("$%.2f", subtotalAmount));
-
         sandwichQuantitySpinner.setSelection(0);
         breadsGroup.clearCheck();
         proteinsGroup.clearCheck();

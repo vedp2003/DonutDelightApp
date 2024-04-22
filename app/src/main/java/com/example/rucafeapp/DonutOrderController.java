@@ -44,9 +44,9 @@ public class DonutOrderController extends AppCompatActivity {
         subtotalTextView = findViewById(R.id.subtotalTextView);
 
         ArrayList<MenuItem> donuts = initializeDonuts();
-        int[] imageResources = initializeDonutImages();
+        int[] images = donutImages();
 
-        donutAdapter = new DonutAdapter(donuts, this, imageResources);
+        donutAdapter = new DonutAdapter(donuts, this, images);
         donutRecyclerView.setLayoutManager(new LinearLayoutManager(this));
         donutRecyclerView.setAdapter(donutAdapter);
 
@@ -73,7 +73,6 @@ public class DonutOrderController extends AppCompatActivity {
     }
 
     public void onAddToCartClicked(View view) {
-
         if (!selectedDonuts.isEmpty()) {
             AlertDialog.Builder builder = new AlertDialog.Builder(this);
             builder.setMessage("Are you sure you want to add order to Current Orders Cart?");
@@ -86,7 +85,8 @@ public class DonutOrderController extends AppCompatActivity {
                     subtotalTextView.setText(String.format("Subtotal: $%.2f", subtotal));
                     donutAdapter.notifyDataSetChanged();
 
-                    Toast.makeText(getApplicationContext(), "Your Donuts Order Has Been Added to the Cart.", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getApplicationContext(),
+                            "Your Donuts Order Has Been Added to the Cart.", Toast.LENGTH_SHORT).show();
                     startActivity(new Intent(getApplicationContext(), MainActivity.class));
                     finish();
                 }
@@ -99,7 +99,8 @@ public class DonutOrderController extends AppCompatActivity {
             AlertDialog alertDialog = builder.create();
             alertDialog.show();
         } else {
-            Toast.makeText(this, "Please select donuts to add to the cart", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this,
+                    "Please select donuts to add to the cart", Toast.LENGTH_SHORT).show();
         }
     }
 
@@ -126,7 +127,8 @@ public class DonutOrderController extends AppCompatActivity {
 
 
         } else {
-            Toast.makeText(DonutOrderController.this, "ERROR: Please select a donut to remove.", Toast.LENGTH_SHORT).show();
+            Toast.makeText(DonutOrderController.this,
+                    "ERROR: Please select a donut to remove.", Toast.LENGTH_SHORT).show();
         }
     }
 
@@ -151,8 +153,8 @@ public class DonutOrderController extends AppCompatActivity {
         return donuts;
     }
 
-    private int[] initializeDonutImages() {
-        return new int[] {
+    private int[] donutImages() {
+        int[] donutImage = new int[] {
                 R.drawable.yeast_donut_a,
                 R.drawable.yeast_donut_b,
                 R.drawable.yeast_donut_c,
@@ -166,6 +168,8 @@ public class DonutOrderController extends AppCompatActivity {
                 R.drawable.donut_holes_b,
                 R.drawable.donut_holes_c
         };
+
+        return donutImage;
     }
 
     @Override

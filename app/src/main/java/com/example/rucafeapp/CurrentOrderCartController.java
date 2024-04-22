@@ -99,7 +99,8 @@ public class CurrentOrderCartController extends AppCompatActivity {
                     currentTaxTextView.setText(String.format("$%.2f", 0.0));
                     currentTotalTextView.setText(String.format("$%.2f", 0.0));
 
-                    Toast.makeText(getApplicationContext(), "Your order has been placed successfully.", Toast.LENGTH_LONG).show();
+                    Toast.makeText(getApplicationContext(),
+                            "Your order has been placed successfully.", Toast.LENGTH_LONG).show();
 
                     startActivity(new Intent(getApplicationContext(), MainActivity.class));
                     finish();
@@ -113,7 +114,8 @@ public class CurrentOrderCartController extends AppCompatActivity {
             AlertDialog alertDialog = builder.create();
             alertDialog.show();
         } else {
-            Toast.makeText(this, "Your current cart is empty. Order items before placing the order.", Toast.LENGTH_LONG).show();
+            Toast.makeText(this,
+                    "Your current cart is empty. Order items before placing the order.", Toast.LENGTH_LONG).show();
         }
     }
 

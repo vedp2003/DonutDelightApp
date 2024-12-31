@@ -4,6 +4,20 @@
 
 ---
 
+## 🛒 What It Does
+
+The **Donut Delight** app is built to serve as a digital menu and order management platform for a local donut shop. This app offers a delightful browsing and ordering experience with a sleek, modern design. Whether you're a small-town bakery or a food truck vendor, **Donut Delight** gives a start to a friendly appplication for for customers to explore menu items and place orders.
+Here’s what it brings to the table:
+
+- **Explore the Menu**: Customers can browse through a variety of donut flavors and types, complete with mouthwatering images and descriptions.
+- **Order Simplified**: Add donuts to your cart with a single tap, view your selections, and confirm orders easily.
+- **Personalized Experience**: Save preferences for faster reordering, ensuring returning customers feel right at home.
+- **Local Shop Integration**: Tailored to meet the needs of small businesses, the app supports customized menus, unique branding, and local delivery options.
+
+Whether you're looking to offer pickup or local delivery, **Donut Delight** provides a modern solution and dashboard-like applicaton for traditional donut shops.
+
+---
+
 ## 🌟 Features
 
 - **Interactive RecyclerView**: Browse through a selection of 12+ donut options, each beautifully displayed with images.

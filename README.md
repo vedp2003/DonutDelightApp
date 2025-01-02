@@ -1,6 +1,6 @@
 # 🍩 Donut Delight Cafe - Android App
 
-**Donut Delight** is a visually appealing and highly interactive Android app that lets users explore and order from a variety of delicious donut options. Developed using **Android Studio**, this project is a showcase of modern mobile development practices.
+**Donut Delight** is a visually appealing and highly interactive Android app that lets users explore and order from a variety of donut, coffee, and sandwich options. Developed using **Android Studio**, this project is a showcase of modern mobile development practices.
 
 ---
 

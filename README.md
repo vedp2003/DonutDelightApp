@@ -3,6 +3,8 @@
 **Donut Delight** is a visually appealing and highly interactive Android app that lets users explore and order from a variety of donut, coffee, and sandwich options. Developed using **Android Studio**, this project is a showcase of modern mobile development practices.
 
 ---
+[▶ View Play Demo on Appetize.io](https://appetize.io/app/b_ud3ns6zkcg7yovmv6wleobwkua)
+
 
 ## 🛒 What It Does
 
